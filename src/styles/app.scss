@@ -1,0 +1,37 @@
+// Define font variables
+$font-heading: 'Poppins', 'Poppins Placeholder', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+
+$heading-one : #FFFFFF;
+$heading-two: #353334;
+$paragraph: #998f8f;
+
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: $font-poppins;
+}
+
+body {
+    font-family: $font-poppins;
+    background-color: #151312;
+    // position: relative;
+    // overflow-y: hidden;
+    // overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+@import "./pages-scss//home.scss"
