@@ -2,6 +2,9 @@ import { meta } from '@eslint/js';
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 
+import variants from '@/utils/variants';
+import { motion } from "framer-motion";
+
 function Contact() {
 
     const [formValue, setFormData] = useState({
@@ -69,15 +72,30 @@ function Contact() {
         <>
             <main>
                 <div className='heading'>
-                    <h1>LET'S WORK</h1>
-                    <h1>TOGETHER</h1>
+                    <motion.h1
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.1 }}
+                        variants={variants("bottom", 0.2)}
+                    >LET'S WORK</motion.h1>
+                    <motion.h1
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.1 }}
+                        variants={variants("bottom", 0.2)}
+                    >TOGETHER</motion.h1>
                 </div>
 
                 <div className='form-container'>
 
                     <div className='form'>
                         <form onSubmit={handleSubmit}>
-                            <div className='name-email'>
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.1 }}
+                                variants={variants("bottom", 0.2)}
+                                className='name-email'>
                                 <div className='field'>
                                     <label htmlFor="name">Name:</label>
                                     <input
@@ -85,51 +103,74 @@ function Contact() {
                                         type="text"
                                         id="name"
                                         name="name"
+                                        placeholder='Enter your name...'
                                         value={formValue.name}
                                         onChange={handleChange}
                                         required
                                     />
                                 </div>
-                                <div className='field'>
+                                <div
+
+                                    className='field'>
                                     <label htmlFor="email">Email:</label>
                                     <input
                                         className='bg email'
                                         type="email"
                                         id="email"
+                                        placeholder='Enter your Email...'
                                         name="email"
                                         value={formValue.email}
                                         onChange={handleChange}
                                         required
                                     />
                                 </div>
-                            </div>
-                            <div className='field'>
+                            </motion.div>
+
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.1 }}
+                                variants={variants("bottom", 0.2)}
+                                className='field'>
                                 <label htmlFor="subject">Subject:</label>
                                 <input
                                     className='bg'
                                     type="text"
                                     id="subject"
                                     name="subject"
+                                    placeholder='Enter subject'
                                     value={formValue.subject}
                                     onChange={handleChange}
                                     required
                                 />
-                            </div>
-                            <div className='field'>
+                            </motion.div>
+
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.1 }}
+                                variants={variants("bottom", 0.2)}
+                                className='field'>
                                 <label htmlFor="message">Message:</label>
                                 <textarea
                                     className='bg'
                                     id="message"
                                     name="message"
+                                    placeholder='Type your text...'
                                     value={formValue.message}
                                     onChange={handleChange}
                                     required
                                 />
-                            </div>
+                            </motion.div>
                             {/* submit Button */}
-                            <div className='submit'>
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.1 }}
+                                variants={variants("bottom", 0.2)}
+                                className='submit'>
                                 <button type="submit">Submit</button>
-                            </div>
+                            </motion.div>
                         </form>
                     </div>
 

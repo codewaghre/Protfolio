@@ -9,6 +9,7 @@
     padding: 20px;
 
     .tooltip-container {
+        // position: fixed;
         background-color: #1C1A19;
         // background-color: aqua;
         padding-inline: 28px;
@@ -201,7 +202,7 @@
                         background-color: $heading-two;
                         border-radius: 12px;
                         padding-inline: 44px;
-                        padding-block: 24px;
+                        padding-block: 15px;
 
                         >p {
                             font-size: 14px;

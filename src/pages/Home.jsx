@@ -72,42 +72,76 @@ function Home() {
                                     ENGINEER
                                 </motion.h1>
 
-                                <p>Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.</p>
+                                <motion.p
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ amount: 0.1 }}
+                                    variants={variants("bottom", 0.1)}
+                                >Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.</motion.p>
 
 
                                 {/* Achiement Info */}
                                 <div className='achivements'>
-                                    <div className='achivements-card'>
+                                    <motion.div
+                                        className='achivements-card'
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.1)}
+                                    >
                                         <h1>{'\u002B'} 12</h1>
                                         <p>YEARS OF EXPERIENCE</p>
-                                    </div>
+                                    </motion.div>
 
-                                    <div className='achivements-card'>
+                                    <motion.div
+                                        className='achivements-card'
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.1)}
+                                    >
                                         <h1>{'\u002B'}12</h1>
                                         <p>PROJECTS COMPLETED</p>
-                                    </div>
+                                    </motion.div>
 
-                                    <div className='achivements-card'>
+                                    <motion.div
+                                        className='achivements-card'
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.1)}
+                                    >
                                         <h1>{'\u002B'} 12</h1>
                                         <p>WORLDWIDE CLIENTS</p>
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 {/* Work Info */}
                                 <div className='info'>
-                                    <Button>
+                                    <motion.button
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.1)}
+                                    >
                                         <p> lets Talk</p>
-                                    </Button>
+                                    </motion.button>
                                     {/* <Button>
                                         <p>Resume</p>
                                     </Button> */}
 
-                                    <div className='work-info'>
+                                    <motion.div
+                                        className='work-info'
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0)}
+                                    >
                                         <Link to="/" style={{ color: "white" }}>
                                             <h1> My Work</h1>
                                         </Link>
                                         <h1><FaArrowRightLong /></h1>
-                                    </div>
+                                    </motion.div>
                                 </div>
 
 

@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 
@@ -16,6 +17,7 @@
 .left-info {
     width: 50%;
     color: #988E8E;
+    // overflow: hidden;
 
 
     .img {
@@ -31,10 +33,12 @@
     width: 50%;
     padding-inline: 20px;
 
+
 }
 
 
 .project-info {
+
 
 
     >div {
@@ -63,6 +67,7 @@
 
 .info {
     >p {
+        padding-block: 20px;
         font-size: 17px;
         color: #988E8E;
         margin-top: 10px;
@@ -282,6 +287,7 @@
     .details-contaier {
         // background-color: rgba(0, 255, 47, 0.377);
         // width: 1200px;
+
     }
 
     .left-info {

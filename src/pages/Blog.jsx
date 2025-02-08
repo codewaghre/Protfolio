@@ -2,13 +2,25 @@ import React from 'react'
 import { LuArrowUpRight } from "react-icons/lu";
 import { Link } from 'react-router-dom';
 import { blogs } from '@/utils/blogs';
+import variants from '@/utils/variants';
+import { motion } from "framer-motion";
 function Blog() {
     return (
         <>
             <main>
                 <div className='heading'>
-                    <h1>CREATIVE</h1>
-                    <h1>BLOGS</h1>
+                    <motion.h1
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.1 }}
+                        variants={variants("bottom", 0.2)}
+                    >CREATIVE</motion.h1>
+                    <motion.h1
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.1 }}
+                        variants={variants("bottom", 0.2)}
+                    >BLOGS</motion.h1>
                 </div>
 
                 <div className='blog-container'>
@@ -17,7 +29,12 @@ function Blog() {
                         {blogs.length && blogs.slice(0, 4).map((data, i) => (
                             <>
                                 <Link to={data.link} key={i}>
-                                    <div className='blog-card'>
+                                    <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants(i % 2 === 0 ? "left" : "right", 0.3)}
+                                        className='blog-card'>
                                         <div className='blog-des'>
                                             <h1>{data.title}</h1>
                                             <p>{data.description} </p>
@@ -30,7 +47,7 @@ function Blog() {
                                                 <LuArrowUpRight />
                                             </div>
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </Link>
                             </>
                         ))}

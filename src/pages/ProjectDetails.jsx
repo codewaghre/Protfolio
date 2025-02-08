@@ -6,6 +6,8 @@ import {
 } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { IoMdArrowDropright } from "react-icons/io";
+import variants from '@/utils/variants';
+import { motion } from "framer-motion";
 
 
 
@@ -34,7 +36,7 @@ function ProjectDetails() {
 
     const [projectInfo, setProjectInfo] = useState(true)
     const [spec, setSpec] = useState(false)
-    const [tool, setTool] = useState(false)
+    const [tool, setTool] = useState(true)
     const handleClickOne = () => {
         setProjectInfo(!projectInfo)
     }
@@ -54,7 +56,12 @@ function ProjectDetails() {
                 <div className='details-contaier'>
 
                     <div className='left-info'>
-                        <div className='img'>
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ amount: 0.1 }}
+                            variants={variants("bottom", 0.2)}
+                            className='img'>
                             <Slider
                                 showThumbnails
                                 objectFit="cover"
@@ -66,7 +73,7 @@ function ProjectDetails() {
                                 images={images.map(i => i.url) || []}
                             />
 
-                        </div>
+                        </motion.div>
                     </div>
 
                     <div className='right-info'>
@@ -74,26 +81,46 @@ function ProjectDetails() {
 
 
 
-                            <div className='setArrow'>
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.1 }}
+                                variants={variants("bottom", 0.2)}
+                                className='setArrow'>
                                 <span onClick={handleClickOne}> <IoMdArrowDropright /></span>
                                 <h1 >  Abhishek Waghre   </h1>
-                            </div>
+                            </motion.div>
 
 
 
                             {projectInfo ? (
                                 <>
-                                    <div className='info'>
+                                    <motion.div
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.2)}
+                                        className='info'>
 
                                         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
 
-                                        <div className='links'>
-                                            <div>
+                                        <motion.div
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ amount: 0.1 }}
+                                            variants={variants("bottom", 0.2)}
+                                            className='links'>
+                                            <motion.div
+                                                initial="hidden"
+                                                whileInView="visible"
+                                                viewport={{ amount: 0.1 }}
+                                                variants={variants("bottom", 0.2)}
+                                            >
                                                 Git  :-
                                                 <Link className='link' to="https://github.com/billimarie/prosecutor-database/issues/9">
                                                     https://github.com/billimarie/prosecutor-database/issues/9
                                                 </Link>
-                                            </div>
+                                            </motion.div>
 
 
                                             <div>
@@ -112,13 +139,13 @@ function ProjectDetails() {
 
 
 
-                                        </div>
-                                    </div>
+                                        </motion.div>
+                                    </motion.div>
                                 </>
                             ) : ""}
 
 
-                            <div className='setArrow'>
+                            {/* <div className='setArrow'>
                                 <span onClick={handleClickTwo}> <IoMdArrowDropright /></span>
                                 <h1 >  Specifications   </h1>
                             </div>
@@ -142,13 +169,18 @@ function ProjectDetails() {
                                     <ul>
                                         <li>The minimum requirements necessary for a web app include a user interface, database, security features,</li>
                                     </ul>
-                                </div></>) : ""}
+                                </div></>) : ""} */}
 
 
-                            <div className='setArrow'>
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.1 }}
+                                variants={variants("bottom", 0.2)}
+                                className='setArrow'>
                                 <span onClick={handleClickThree}> <IoMdArrowDropright /></span>
                                 <h1 >  Tech and Tools   </h1>
-                            </div>
+                            </motion.div>
 
                             {
 
@@ -156,15 +188,30 @@ function ProjectDetails() {
 
 
                                     <div className='tech-box'>
-                                        <div>
+                                        <motion.div
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ amount: 0.1 }}
+                                            variants={variants("bottom", 0.2)}
+                                        >
                                             JavaScript
-                                        </div>
-                                        <div>
+                                        </motion.div>
+                                        <motion.div
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ amount: 0.1 }}
+                                            variants={variants("bottom", 0.2)}
+                                        >
                                             JavaScript
-                                        </div>
-                                        <div>
+                                        </motion.div>
+                                        <motion.div
+                                            initial="hidden"
+                                            whileInView="visible"
+                                            viewport={{ amount: 0.1 }}
+                                            variants={variants("bottom", 0.2)}
+                                        >
                                             JavaScript
-                                        </div>
+                                        </motion.div>
                                     </div>
                                 </div></>) : ""
                             }

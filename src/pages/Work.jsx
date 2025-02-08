@@ -4,13 +4,30 @@ import React from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
+import variants from '@/utils/variants';
+import { motion } from "framer-motion";
+
 function Work() {
     return (
         <>
             <div>
                 <div className='heading'>
-                    <h1>ABOUT MY</h1>
-                    <h1>WORK</h1>
+                    <motion.h1
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.1 }}
+                        variants={variants("bottom", 0.4)}
+                    >
+                        ABOUT MY
+                    </motion.h1>
+                    <motion.h1
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ amount: 0.1 }}
+                        variants={variants("bottom", 0.2)}
+                    >
+                        WORK
+                    </motion.h1>
                 </div>
 
 
@@ -36,12 +53,22 @@ function Work() {
                             <h4 className="vertical-timeline-element-subtitle hero-des">Miami, FL</h4>
                             <div>
                                 <ul className='ul'>
-                                    <li>
+                                    <motion.li
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.1)}
+                                    >
                                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </li>
-                                    <li>
+                                    </motion.li>
+                                    <motion.li
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.2)}
+                                    >
                                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </li>
+                                    </motion.li>
                                 </ul>
                             </div>
                         </VerticalTimelineElement>
@@ -62,12 +89,22 @@ function Work() {
                             <h4 className="vertical-timeline-element-subtitle hero-des">Miami, FL</h4>
                             <div>
                                 <ul className='ul'>
-                                    <li>
+                                    <motion.li
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.2)}
+                                    >
                                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </li>
-                                    <li>
+                                    </motion.li>
+                                    <motion.li
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ amount: 0.1 }}
+                                        variants={variants("bottom", 0.2)}
+                                    >
                                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </li>
+                                    </motion.li>
                                 </ul>
                             </div>
                         </VerticalTimelineElement>

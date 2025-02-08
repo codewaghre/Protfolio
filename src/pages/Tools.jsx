@@ -3,6 +3,10 @@ import { tools } from '../utils/tools'
 import useScreenWidth from '@/utils/useScreeWidth';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
+import variants from '@/utils/variants';
+import { motion } from "framer-motion";
+import ToolsTwo from '../components/my-components/ToolsTwo';
+import ToolOne from '@/components/my-components/ToolOne';
 
 
 function Tools() {
@@ -26,35 +30,23 @@ function Tools() {
     return (
         <main>
             <div className='heading'>
-                <h1>TECH</h1>
-                <h1>TOOLS</h1>
+                <motion.h1
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.1 }}
+                    variants={variants("bottom", 0.2)}
+                >TECH</motion.h1>
+                <motion.h1
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ amount: 0.1 }}
+                    variants={variants("bottom", 0.2)}
+                >TOOLS</motion.h1>
             </div>
 
 
-            <div className='tools-containter'>
-                <div className='tools'>
-                    {tools.slice(0, visibleImages).map((tool, index) => (
-                        <>
-                            <div className='tool-box' key={index} >
-                                <div className='tool-img'>
-                                    <img src={tool.logo} />
-                                </div>
-                                <div className='tool-des'>
-                                    <h1>{tool.name}</h1>
-                                    <p>{tool.description}</p>
-                                </div>
-                            </div>
-                        </>
-                    ))}
-                </div>
-
-                {/* Testing */}
-                {/* {isMobile && visibleImages < tools.length && (
-                    <button className="show-more-button" onClick={handleShowMore}>
-                        Show More
-                    </button>
-                )} */}
-            </div>
+            {/* <ToolsTwo visibleImages={visibleImages} /> */}
+            <ToolOne visibleImages={visibleImages} />
 
             <div className='show-more'>
 
@@ -66,9 +58,14 @@ function Tools() {
                 {visibleImages && visibleImages > 9
                     ? (
                         <>
-                            <h1 className='up' onClick={handleShowLess}>
+                            <motion.h1
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ amount: 0.1 }}
+                                variants={variants("bottom", 0.2)}
+                                className='up' onClick={handleShowLess}>
                                 <FaChevronUp />
-                            </h1>
+                            </motion.h1>
                         </>
                     ) : ""
                 }
@@ -79,5 +76,7 @@ function Tools() {
 }
 
 export default Tools
+
+
 
 
