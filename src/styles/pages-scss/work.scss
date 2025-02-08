@@ -1,0 +1,38 @@
+.ul {
+    margin-top: 10px;
+
+    >li {
+        // margin: 10px;
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    >li:hover {
+        background-color: #1C1A19;
+    }
+}
+
+.work-timeline {
+    margin-bottom: 50px;
+}
+
+.hero {
+
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.hero-des {
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+
+}
+
+
+.radius {
+    border-radius: 50%;
+}
