@@ -1,4 +1,4 @@
-// import { tools } from '@/utils/tools'
+
 import React from 'react'
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
@@ -12,12 +12,10 @@ function ToolOne({ visibleImages }) {
 
     const { tools } = tool.tech_tools
 
-    console.log("tools", tools);
 
-
-    const scrollDirection = useScrollDirection(); // Get current scroll direction
-    const shouldAnimate = scrollDirection === "down"; // Only animate on scroll down
-
+    // ScrollDirection and should Animate
+    const scrollDirection = useScrollDirection();
+    const shouldAnimate = scrollDirection === "down";
 
 
     return (
@@ -27,7 +25,8 @@ function ToolOne({ visibleImages }) {
                 {tools.slice(0, visibleImages).map((tool, i) => (
                     <>
                         <motion.div
-                            initial={shouldAnimate ? false : 'hidden'}
+                            initial="hidden"
+                            animate={shouldAnimate ? 'visible' : false}
                             whileInView="visible"
                             viewport={{ amount: 0.1 }}
                             variants={variants("bottom", 0.2)}

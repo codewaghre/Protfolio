@@ -7,20 +7,33 @@ import img2 from '../../src/assets/img-2.svg'
 
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaFileAlt } from "react-icons/fa";
-import { Button } from '@/components/ui/button';
 
+import { Button } from '@/components/ui/button';
 import Social from '@/components/my-components/Social';
 
+import useScrollDirection from '@/utils/useScrollDirect';
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
 
 import homeData from "../../src/data/home.json"
+import { downloadFile } from '@/utils/useDownloadFile';
 
 
 function Home() {
 
     const { img, name, description } = homeData.home.card_details
     const { pagetitleone, pagetitletwo, about, years_of_expirence, completed_project, Worldwide_client } = homeData.home
+
+    const handleDownload = () => {
+        // const fileUrl = "https://github.com/codewaghre/myresume/raw/main/Abhishek%20Waghre%20v1.pdf";
+        const fileUrl = `${import.meta.env.VITE_DOWNLOAD_LINK}/Abhishek%20Waghre%20v1.pdf`;
+        const fileName = 'Abhishek Resume.pdf';
+        downloadFile(fileUrl, fileName);
+    };
+
+    // ScrollDirection and should Animate
+    const scrollDirection = useScrollDirection();
+    const shouldAnimate = scrollDirection === "down";
 
     return (
 
@@ -45,7 +58,7 @@ function Home() {
 
                                 <img className='style-icon-1' src={img1} />
 
-                                <Button className='resume'>
+                                <Button onClick={handleDownload} className='resume'>
                                     Resume <FaFileAlt />
                                 </Button>
 
@@ -66,6 +79,7 @@ function Home() {
 
                                 <motion.h1
                                     initial="hidden"
+                                    animate={shouldAnimate ? 'visible' : false}
                                     whileInView="visible"
                                     viewport={{ amount: 0.1 }}
                                     variants={variants("bottom", 0.1)}
@@ -75,6 +89,7 @@ function Home() {
 
                                 <motion.h1
                                     initial="hidden"
+                                    animate={shouldAnimate ? 'visible' : false}
                                     whileInView="visible"
                                     viewport={{ amount: 0.1 }}
                                     variants={variants("bottom", 0.1)}
@@ -84,6 +99,7 @@ function Home() {
 
                                 <motion.p
                                     initial="hidden"
+                                    animate={shouldAnimate ? 'visible' : false}
                                     whileInView="visible"
                                     viewport={{ amount: 0.1 }}
                                     variants={variants("bottom", 0.1)}
@@ -94,7 +110,9 @@ function Home() {
                                 <div className='achivements'>
                                     <motion.div
                                         className='achivements-card'
+
                                         initial="hidden"
+                                        animate={shouldAnimate ? 'visible' : false}
                                         whileInView="visible"
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}
@@ -105,7 +123,9 @@ function Home() {
 
                                     <motion.div
                                         className='achivements-card'
+
                                         initial="hidden"
+                                        animate={shouldAnimate ? 'visible' : false}
                                         whileInView="visible"
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}
@@ -116,7 +136,9 @@ function Home() {
 
                                     <motion.div
                                         className='achivements-card'
+
                                         initial="hidden"
+                                        animate={shouldAnimate ? 'visible' : false}
                                         whileInView="visible"
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}
@@ -130,21 +152,25 @@ function Home() {
                                 <div className='info'>
                                     <motion.button
                                         initial="hidden"
+                                        animate={shouldAnimate ? 'visible' : false}
                                         whileInView="visible"
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}
                                     >
-                                        <p> lets Talk</p>
+                                        <Link to="/contact">
+                                            <p style={{ color: 'white' }}>lets Talk</p></Link>
                                     </motion.button>
 
                                     <motion.div
                                         className='work-info'
+
                                         initial="hidden"
+                                        animate={shouldAnimate ? 'visible' : false}
                                         whileInView="visible"
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0)}
                                     >
-                                        <Link to="/" style={{ color: "white" }}>
+                                        <Link to="/projects" style={{ color: "white" }}>
                                             <h1> My Work</h1>
                                         </Link>
                                         <h1><FaArrowRightLong /></h1>

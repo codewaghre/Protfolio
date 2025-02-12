@@ -1,7 +1,6 @@
 import React from 'react'
 import { LuArrowUpRight } from "react-icons/lu";
 import { Link, useLocation } from 'react-router-dom';
-import { blogs } from '@/utils/blogs';
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
 import useScrollDirection from '@/utils/useScrollDirect';
@@ -11,6 +10,7 @@ function Blog() {
 
     const { blog_title_one, blog_title_two, blogs_contents } = blog.blogs
     const scrollDirection = useScrollDirection();
+
     const shouldAnimate = scrollDirection === "down";
     const location = useLocation();
 
@@ -36,39 +36,6 @@ function Blog() {
                     >{blog_title_two}</motion.h1>
                 </div>
 
-                {/* <div className='blog-container'>
-                    <div className='blog'>
-
-                        {blogs.length && blogs.slice(0, 4).map((data, i) => (
-                            <>
-                                <Link to={data.link} key={i}>
-                                    <motion.div
-                                        initial="hidden"
-                                        animate={shouldAnimate ? 'visible' : false}
-                                        whileInView="visible"
-                                        viewport={{ amount: 0.1 }}
-                                        variants={variants(i % 2 === 0 ? "left" : "right", 0.3)}
-                                        className='blog-card'>
-                                        <div className='blog-des'>
-                                            <h1>{data.title}</h1>
-                                            <p>{data.description} </p>
-
-                                            <p>{data.date}</p>
-                                        </div>
-
-                                        <div className='blog-go'>
-                                            <div>
-                                                <LuArrowUpRight />
-                                            </div>
-                                        </div>
-                                    </motion.div>
-                                </Link>
-                            </>
-                        ))}
-
-
-                    </div>
-                </div> */}
 
 
                 {/* new blog Style  */}
@@ -78,10 +45,11 @@ function Blog() {
                         {blog && blogs_contents.map((data, i) => (
                             <>
 
-                                <Link to={data.link} key={data.id} >
+                                <Link to={data.link} key={data.id} target='blank'>
                                     <motion.div
                                         key={i}
                                         initial="hidden"
+                                        animate={shouldAnimate ? 'visible' : false}
                                         whileInView="visible"
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}

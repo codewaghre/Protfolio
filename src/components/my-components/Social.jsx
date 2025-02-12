@@ -13,7 +13,7 @@ function Social() {
         <>
             <div className='social'>
                 {socialData && socials ? socials.map((social, index) => (
-                    <Link key={index} to={social.link ? social.link : "/"}>
+                    <Link key={index} to={social.link ? social.link : "/"} target='blank'>
                         {social.name === 'Instagram' && <FaInstagramSquare size={24} />}
                         {social.name === 'Linkedin' && <FaLinkedin size={24} />}
                         {social.name === 'Twitter' && <FaTwitter size={24} />}

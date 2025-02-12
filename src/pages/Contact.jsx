@@ -1,11 +1,15 @@
-import { meta } from '@eslint/js';
+
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
+import useScrollDirection from '@/utils/useScrollDirect';
 
 function Contact() {
+
+    const scrollDirection = useScrollDirection();
+    const shouldAnimate = scrollDirection === "down";
 
     const [formValue, setFormData] = useState({
         name: '',
@@ -14,10 +18,7 @@ function Contact() {
         message: ''
     });
 
-
-
-
-
+    //Handle the Chnage of form data
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
@@ -26,12 +27,9 @@ function Contact() {
         });
     };
 
+    // handle the Submit event
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-
-        console.log("Access Key:", import.meta.env.VITE_EMAIL_ACCESS_KEY);
-
         const payload = {
             ...formValue,
             access_key: import.meta.env.VITE_EMAIL_ACCESS_KEY
@@ -62,7 +60,6 @@ function Contact() {
 
             }
         } catch (error) {
-            console.error("Error submitting form:", error);
             toast.error("Smothing Went Wrong")
         }
     }
@@ -74,12 +71,14 @@ function Contact() {
                 <div className='heading'>
                     <motion.h1
                         initial="hidden"
+                        animate={shouldAnimate ? 'visible' : false}
                         whileInView="visible"
                         viewport={{ amount: 0.1 }}
                         variants={variants("bottom", 0.2)}
                     >LET'S WORK</motion.h1>
                     <motion.h1
                         initial="hidden"
+                        animate={shouldAnimate ? 'visible' : false}
                         whileInView="visible"
                         viewport={{ amount: 0.1 }}
                         variants={variants("bottom", 0.2)}
@@ -90,13 +89,15 @@ function Contact() {
 
                     <div className='form'>
                         <form onSubmit={handleSubmit}>
-                            <motion.div
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ amount: 0.1 }}
-                                variants={variants("bottom", 0.2)}
-                                className='name-email'>
-                                <div className='field'>
+                            <div className='name-email'>
+                                <motion.div
+                                    className='field'
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    animate={shouldAnimate ? 'visible' : false}
+                                    viewport={{ amount: 0.1 }}
+                                    variants={variants("bottom", 0.3)}
+                                >
                                     <label htmlFor="name">Name:</label>
                                     <input
                                         className='bg name'
@@ -108,10 +109,16 @@ function Contact() {
                                         onChange={handleChange}
                                         required
                                     />
-                                </div>
-                                <div
+                                </motion.div>
 
-                                    className='field'>
+                                <motion.div
+                                    className='field'
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    animate={shouldAnimate ? 'visible' : false}
+                                    viewport={{ amount: 0.1 }}
+                                    variants={variants("bottom", 0.2)}
+                                >
                                     <label htmlFor="email">Email:</label>
                                     <input
                                         className='bg email'
@@ -123,12 +130,13 @@ function Contact() {
                                         onChange={handleChange}
                                         required
                                     />
-                                </div>
-                            </motion.div>
+                                </motion.div>
+                            </div>
 
                             <motion.div
                                 initial="hidden"
                                 whileInView="visible"
+                                animate={shouldAnimate ? 'visible' : false}
                                 viewport={{ amount: 0.1 }}
                                 variants={variants("bottom", 0.2)}
                                 className='field'>
@@ -148,6 +156,7 @@ function Contact() {
                             <motion.div
                                 initial="hidden"
                                 whileInView="visible"
+                                animate={shouldAnimate ? 'visible' : false}
                                 viewport={{ amount: 0.1 }}
                                 variants={variants("bottom", 0.2)}
                                 className='field'>
@@ -165,6 +174,7 @@ function Contact() {
                             {/* submit Button */}
                             <motion.div
                                 initial="hidden"
+                                animate={shouldAnimate ? 'visible' : false}
                                 whileInView="visible"
                                 viewport={{ amount: 0.1 }}
                                 variants={variants("bottom", 0.2)}

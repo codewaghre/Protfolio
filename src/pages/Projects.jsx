@@ -1,34 +1,77 @@
-import { Button } from "@/components/ui/button"
+
 import useScreenWidth from "@/utils/useScreeWidth";
-import { motion } from "framer-motion";
+
 import { useState } from "react"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 import variants from '@/utils/variants';
-import { Link } from "react-router-dom";
+import useScrollDirection from "@/utils/useScrollDirect";
+import { motion } from "framer-motion";
 
-import coverImg from '../assets/img-5.svg'
-
-
+import ProjectSlider from '../components/my-components/ProjectSlider'
 import projectData from '../data/project.json'
+
+
 
 function Projects() {
 
-    const { project_title_one, project_title_two } = projectData.projects
+
+    const { project_title_one, project_title_two, project_data } = projectData.projects
 
     const [visibleImages, setVisibleImages] = useState(9);
 
+    // below code :- Testing Show More and show less
     // calulate this screen pixel screen (like Phone, Pad )
     const isMobile = useScreenWidth();
-
-
     const handleShowMore = () => {
         setVisibleImages((prevVisibleImages) => prevVisibleImages + 9);
     };
-
     const handleShowLess = () => {
         setVisibleImages((prevVisibleImages) => prevVisibleImages - 9);
     }
+
+
+
+
+    // ScrollDirection and should Animate
+    const scrollDirection = useScrollDirection();
+    const shouldAnimate = scrollDirection === "down";
+
+    var settings = {
+        dots: true,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 4,
+        initialSlide: 0,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    initialSlide: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
 
 
     return (
@@ -36,6 +79,7 @@ function Projects() {
             <div className='heading'>
                 <motion.h1
                     initial="hidden"
+                    animate={shouldAnimate ? 'visible' : false}
                     whileInView="visible"
                     viewport={{ amount: 0.1 }}
                     variants={variants("bottom", 0.2)}
@@ -44,6 +88,7 @@ function Projects() {
                 </motion.h1>
                 <motion.h1
                     initial="hidden"
+                    animate={shouldAnimate ? 'visible' : false}
                     whileInView="visible"
                     viewport={{ amount: 0.1 }}
                     variants={variants("bottom", 0.2)}
@@ -54,37 +99,15 @@ function Projects() {
 
 
 
-            <div className='project-card-container'>
-
-                <div className='cards' >
-                    {projectData && projectData.projects.project_data.map((data, i) => (
-                        <>
-
-                            <Link to={`/project-details/${data.id}`} key={data.id} >
-                                <motion.div
-                                    key={data.id}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ amount: 0.1 }}
-                                    variants={variants("bottom", 0.1)}
-                                    className='project-card' >
-                                    <div className='img-container'>
-                                        <img src={data.banners[0] ? data.banners[0] : data.banners[1]} alt='card-img' />
-                                    </div>
-
-                                    <div className='desc'>
-                                        <h1>{data.project_name}</h1>
-
-                                    </div>
-                                </motion.div>
-                            </Link>
-
-                        </>
-                    ))}
-                </div>
-
-            </div>
-
+            <motion.div
+                initial="hidden"
+                animate={shouldAnimate ? 'visible' : false}
+                whileInView="visible"
+                viewport={{ amount: 0.5 }}
+                variants={variants("bottom", -0.3)}
+            >
+                <ProjectSlider data={project_data} />
+            </motion.div>
 
 
             {/* Tesitng / future need */}

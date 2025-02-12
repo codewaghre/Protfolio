@@ -28,12 +28,7 @@ function ProjectDetails() {
         return <div>Project not found</div>;
     }
 
-    const { project_name, short_description, project_desciption, project_links, tech_tools, banners } = project;
-
-
-
-    console.log(banners);
-
+    const { project_name, project_desciption, project_links, tech_tools, banners } = project;
 
 
     const [projectInfo, setProjectInfo] = useState(true)

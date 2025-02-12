@@ -1,10 +1,12 @@
 import React from 'react'
-import { tools } from '../../utils/tools'
 
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
 
+import tool from '../../data/tools.json'
+
 function ToolsTwo({ visibleImages }) {
+    const { tools } = tool.tech_tools
     return (
         <>
             <div div className='tools-containter' >

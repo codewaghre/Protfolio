@@ -25,17 +25,19 @@
 
 }
 
+// Blog Section 
 
 .project-card-container {
-    // background-color: aquamarine;
+    // background-color: rgba(127, 255, 212, 0.181);
     padding-inline: 20px;
     overflow: hidden;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 
 .cards {
-    // background-color: red;
+    // background-color: rgba(255, 0, 0, 0.149);
+    // width: 1400px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -73,40 +75,6 @@
     }
 }
 
-
-.desc {
-    width: 300px;
-    padding-inline: 20px;
-    padding-block: 12px;
-
-
-    >h1:nth-child(1) {
-        color: #988E8E;
-        font-family: $font-poppins;
-        font-size: 32px;
-        font-weight: 400;
-        margin-bottom: 10px;
-
-    }
-
-    >h1:nth-child(1):hover {
-        color: white;
-    }
-
-    >h1:nth-child(2) {
-        color: #988E8E;
-        font-family: $font-poppins;
-        font-size: 16px;
-        font-weight: 400;
-        margin-bottom: 10px;
-    }
-}
-
-
-.desc:hover {
-    background-color: #1C1A19;
-    color: white;
-}
 
 
 

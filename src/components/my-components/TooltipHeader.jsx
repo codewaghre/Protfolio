@@ -7,8 +7,8 @@ import {
 } from "@/components/ui/tooltip"
 
 import { FiHome } from "react-icons/fi";
-import { Link, useParams } from 'react-router-dom';
-import { IoSettingsOutline } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+import { GoTools } from "react-icons/go";
 import { TfiWrite } from "react-icons/tfi";
 import { FaRegFolder } from 'react-icons/fa';
 import { FaLaptopCode } from 'react-icons/fa';
@@ -26,7 +26,7 @@ function TooltipHeader() {
                 className='tooltip-container'
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ amount: 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
                 variants={variants("top", 0.1)}
             >
                 <div className='tooltip'>
@@ -82,7 +82,7 @@ function TooltipHeader() {
                             <TooltipTrigger>
                                 <Link to="/tools" style={{ color: "white" }}>
                                     <div className='icon'>
-                                        <IoSettingsOutline />
+                                        <GoTools />
                                     </div>
                                 </Link>
 

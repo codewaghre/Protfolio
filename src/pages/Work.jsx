@@ -7,13 +7,24 @@ import { FaBriefcase } from "react-icons/fa";
 
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
+import useScrollDirection from '@/utils/useScrollDirect';
 
 import workData from '../data/work.json'
+
 
 function Work() {
 
     const { works, work_title_one, work_title_two } = workData.my_work;
     const [isHovered, setIsHovered] = useState(false);
+
+
+
+    // ScrollDirection and should Animate
+    const scrollDirection = useScrollDirection();
+    const shouldAnimate = scrollDirection === "down";
+
+
+
 
     return (
         <>
@@ -21,14 +32,16 @@ function Work() {
                 <div className='heading'>
                     <motion.h1
                         initial="hidden"
+                        animate={shouldAnimate ? 'visible' : false}
                         whileInView="visible"
                         viewport={{ amount: 0.1 }}
-                        variants={variants("bottom", 0.4)}
+                        variants={variants("bottom", 0.2)}
                     >
                         {work_title_one}
                     </motion.h1>
                     <motion.h1
                         initial="hidden"
+                        animate={shouldAnimate ? 'visible' : false}
                         whileInView="visible"
                         viewport={{ amount: 0.1 }}
                         variants={variants("bottom", 0.2)}
@@ -39,15 +52,15 @@ function Work() {
 
 
 
+
                 <div className='work-timeline'>
                     <VerticalTimeline lineColor='#353334' >
-
 
                         {
                             works.map((work, i) => (
                                 <>
                                     <VerticalTimelineElement
-                                        key={i}
+                                        key={work.id ? work.id : i}
                                         className="vertical-timeline-element--work custom-timeline-element"
                                         contentStyle={{
                                             background: '#151312',
@@ -56,7 +69,6 @@ function Work() {
                                             marginBottom: "20px"
                                         }}
                                         contentArrowStyle={{ borderRight: '7px solid #353334' }}
-                                        // date={work.experience}
                                         date={<span className={`custom-date ${isHovered ? 'hovered' : ''}`}>{work.experience}</span>}
                                         dateClassName="custom-dates"
                                         iconStyle={{
@@ -81,9 +93,10 @@ function Work() {
                                                         <motion.li
                                                             key={i}
                                                             initial="hidden"
+                                                            animate={shouldAnimate ? 'visible' : false}
                                                             whileInView="visible"
                                                             viewport={{ amount: 0.1 }}
-                                                            variants={variants("bottom", 0.1)}
+                                                            variants={variants("bottom", 0.2)}
                                                         >
                                                             {role}
                                                         </motion.li>

@@ -1,14 +1,20 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import variants from '../../utils/variants'
+import useScrollDirection from '@/utils/useScrollDirect';
 
 const FooterContact = () => {
+
+    // ScrollDirection and should Animate
+    const scrollDirection = useScrollDirection();
+    const shouldAnimate = scrollDirection === "down";
     return (
         <>
             <motion.div
                 className="flex flex-col py-8 px-4 sm:px-6 lg:px-8 md:flex-row gap-8"
                 initial="hidden"
                 whileInView="visible"
+                animate={shouldAnimate ? 'visible' : false}
                 viewport={{ amount: 0.1 }}
                 variants={variants("bottom", 0.3)}
             >

@@ -8,16 +8,18 @@ import ToolsTwo from '../components/my-components/ToolsTwo';
 import ToolOne from '@/components/my-components/ToolOne';
 import useScrollDirection from '@/utils/useScrollDirect';
 
+
 import tools from '../data/tools.json'
 
 
 function Tools() {
 
-    // console.log(tools);
+
 
     const { tools_title_one, tools_title_two } = tools.tech_tools
     const [visibleImages, setVisibleImages] = useState(8);
 
+    //  below code :- Show More and Show Les
     // calulate this screen pixel screen (like Phone, Pad )
     const isMobile = useScreenWidth();
 
@@ -30,6 +32,7 @@ function Tools() {
     }
 
 
+    // ScrollDirection and should Animate
     const scrollDirection = useScrollDirection();
     const shouldAnimate = scrollDirection === "down";
 
@@ -38,18 +41,18 @@ function Tools() {
         <main>
             <div className='heading'>
                 <motion.h1
-                    // initial="hidden"
-                    initial={shouldAnimate ? false : 'hidden'}
+                    initial="hidden"
+                    animate={shouldAnimate ? 'visible' : false}
                     whileInView="visible"
                     viewport={{ amount: 0.1 }}
                     variants={variants("bottom", 0.2)}
                 >{tools_title_one}</motion.h1>
                 <motion.h1
-                    // initial="hidden"
-                    initial={shouldAnimate ? false : 'hidden'}
+                    initial="hidden"
+                    animate={shouldAnimate ? 'visible' : false}
                     whileInView="visible"
                     viewport={{ amount: 0.1 }}
-                    variants={variants("bottom", 0.3)}
+                    variants={variants("bottom", 0.2)}
                 >{tools_title_two}</motion.h1>
             </div>
 
@@ -61,14 +64,14 @@ function Tools() {
 
             {/* Show More Button hide */}
 
-            <div className='show-more'>
+            {/* <div className='show-more'>
 
-                {/* <h1 onClick={handleShowMore}>
+                <h1 onClick={handleShowMore}>
                     <FaChevronDown />
-                </h1> */}
+                </h1>
 
 
-                {/* {visibleImages && visibleImages > 9
+                {visibleImages && visibleImages > 9
                     ? (
                         <>
                             <motion.h1
@@ -81,9 +84,10 @@ function Tools() {
                             </motion.h1>
                         </>
                     ) : ""
-                } */}
+                }
 
-            </div>
+            </div> */}
+
         </main >
     )
 }

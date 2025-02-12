@@ -1,12 +1,11 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-import footerLogo from "../assets/footer-logo.png"
+import { FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import FooterContact from '../components/my-components/FooterContact';
 import { motion } from 'framer-motion';
 import variants from '../utils/variants';
 import { Link } from 'react-router-dom';
 import { BsFileArrowUpFill } from "react-icons/bs";
-import { FaGithub, FaInstagramSquare, FaLinkedin, } from "react-icons/fa"
+import { FaGithub, FaInstagramSquare, } from "react-icons/fa"
 
 
 const Footer = () => {
