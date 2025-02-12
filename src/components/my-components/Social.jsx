@@ -2,25 +2,24 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaGithub, FaInstagramSquare, FaLinkedin, } from "react-icons/fa"
 import { FaTwitter } from "react-icons/fa";
+import socialData from '../../data/home.json'
 function Social() {
+
+    const socials = socialData.home.card_details.socials;
+
+
+
     return (
         <>
             <div className='social'>
-                <Link to="/" >
-                    <FaInstagramSquare size={24} />
-                </Link>
-
-                <Link >
-                    <FaLinkedin size={24} />
-                </Link>
-
-                <Link>
-                    <FaTwitter size={24} />
-                </Link>
-
-                <Link>
-                    <FaGithub size={24} />
-                </Link>
+                {socialData && socials ? socials.map((social, index) => (
+                    <Link key={index} to={social.link ? social.link : "/"}>
+                        {social.name === 'Instagram' && <FaInstagramSquare size={24} />}
+                        {social.name === 'Linkedin' && <FaLinkedin size={24} />}
+                        {social.name === 'Twitter' && <FaTwitter size={24} />}
+                        {social.name === 'Github' && <FaGithub size={24} />}
+                    </Link>
+                )) : ""}
             </div>
         </>
     )

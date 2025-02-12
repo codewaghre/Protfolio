@@ -31,7 +31,7 @@ function App() {
           <Route path="/tools" element={<Tools />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/project-details" element={<ProjectDetails />} />
+          <Route path="/project-details/:id" element={<ProjectDetails />} />
         </Routes>
         {/* <Footer /> */}
         <Toaster position="bottom-center" reverseOrder={true} />

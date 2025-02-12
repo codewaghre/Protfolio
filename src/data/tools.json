@@ -1,0 +1,68 @@
+ {
+        "tech_tools" : {
+            "tools_title_one" : "TECH ",
+            "tools_title_two" : "TOOLS",
+            "tools" : [
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Flutter",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Java",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "XML",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                },
+                {
+                    "name" : "Dart",
+                    "logo" : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
+                }
+            ]
+        }
+    }

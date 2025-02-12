@@ -1,13 +1,20 @@
 import CompaniesLogo from '@/components/my-components/CompaniesLogo';
 import { WorkflowIcon } from 'lucide-react';
-import React from 'react'
+import React, { useState } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import { FaBriefcase } from "react-icons/fa";
 
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
 
+import workData from '../data/work.json'
+
 function Work() {
+
+    const { works, work_title_one, work_title_two } = workData.my_work;
+    const [isHovered, setIsHovered] = useState(false);
+
     return (
         <>
             <div>
@@ -18,7 +25,7 @@ function Work() {
                         viewport={{ amount: 0.1 }}
                         variants={variants("bottom", 0.4)}
                     >
-                        ABOUT MY
+                        {work_title_one}
                     </motion.h1>
                     <motion.h1
                         initial="hidden"
@@ -26,7 +33,7 @@ function Work() {
                         viewport={{ amount: 0.1 }}
                         variants={variants("bottom", 0.2)}
                     >
-                        WORK
+                        {work_title_two}
                     </motion.h1>
                 </div>
 
@@ -35,89 +42,64 @@ function Work() {
                 <div className='work-timeline'>
                     <VerticalTimeline lineColor='#353334' >
 
-                        {/* first */}
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work custom-timeline-element" // Add custom class
-                            contentStyle={{
-                                background: '#151312',
-                                color: '#988E8E',
-                                border: '1px solid #988e8e40',
-                                marginBottom: "20px"
-                            }}
-                            contentArrowStyle={{ borderRight: '7px solid #353334' }}
-                            date="2011 - present"
-                            iconStyle={{ background: 'rgb(33, 150, 243)', color: 'white' }}
-                            icon={<CompaniesLogo />}
-                        >
-                            <h1 className="vertical-timeline-element-title hero">Creative Director</h1>
-                            <h4 className="vertical-timeline-element-subtitle hero-des">Miami, FL</h4>
-                            <div>
-                                <ul className='ul'>
-                                    <motion.li
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ amount: 0.1 }}
-                                        variants={variants("bottom", 0.1)}
+
+                        {
+                            works.map((work, i) => (
+                                <>
+                                    <VerticalTimelineElement
+                                        key={i}
+                                        className="vertical-timeline-element--work custom-timeline-element"
+                                        contentStyle={{
+                                            background: '#151312',
+                                            color: '#988E8E',
+                                            border: '1px solid #988e8e40',
+                                            marginBottom: "20px"
+                                        }}
+                                        contentArrowStyle={{ borderRight: '7px solid #353334' }}
+                                        // date={work.experience}
+                                        date={<span className={`custom-date ${isHovered ? 'hovered' : ''}`}>{work.experience}</span>}
+                                        dateClassName="custom-dates"
+                                        iconStyle={{
+                                            background: '#151312',
+                                            color: '#988E8E',
+                                        }}
+                                        icon={
+                                            <FaBriefcase
+                                                onMouseEnter={() => setIsHovered(true)}
+                                                onMouseLeave={() => setIsHovered(false)}
+                                            />
+                                        }
                                     >
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </motion.li>
-                                    <motion.li
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ amount: 0.1 }}
-                                        variants={variants("bottom", 0.2)}
-                                    >
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </motion.li>
-                                </ul>
-                            </div>
-                        </VerticalTimelineElement>
+                                        <h1 className="vertical-timeline-element-title hero">{work.position}</h1>
+                                        <h4 className="vertical-timeline-element-subtitle hero-des">{work.company_name}</h4>
+                                        <div>
+                                            <ul className='ul'>
 
-                        <VerticalTimelineElement
-                            className="vertical-timeline-element--work custom-timeline-element" // Add custom class
-                            contentStyle={{
-                                background: '#151312',
-                                color: '#988E8E',
-                                border: '1px solid #988e8e40',
-                            }}
-                            contentArrowStyle={{ borderRight: '7px solid #353334' }}
-                            date="2011 - present"
-                            iconStyle={{ background: 'rgb(33, 150, 243)', color: 'white' }}
-                            icon={<CompaniesLogo />}
-                        >
-                            <h1 className="vertical-timeline-element-title hero">Creative Director</h1>
-                            <h4 className="vertical-timeline-element-subtitle hero-des">Miami, FL</h4>
-                            <div>
-                                <ul className='ul'>
-                                    <motion.li
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ amount: 0.1 }}
-                                        variants={variants("bottom", 0.2)}
-                                    >
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </motion.li>
-                                    <motion.li
-                                        initial="hidden"
-                                        whileInView="visible"
-                                        viewport={{ amount: 0.1 }}
-                                        variants={variants("bottom", 0.2)}
-                                    >
-                                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'
-                                    </motion.li>
-                                </ul>
-                            </div>
-                        </VerticalTimelineElement>
+                                                {work.roles_and_responsibliies.map((role, i) => (
+                                                    <>
 
-
-
-
-
+                                                        <motion.li
+                                                            key={i}
+                                                            initial="hidden"
+                                                            whileInView="visible"
+                                                            viewport={{ amount: 0.1 }}
+                                                            variants={variants("bottom", 0.1)}
+                                                        >
+                                                            {role}
+                                                        </motion.li>
+                                                    </>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </VerticalTimelineElement >
+                                </>
+                            ))
+                        }
 
                     </VerticalTimeline>
                 </div>
 
-            </div>
+            </div >
 
 
         </>

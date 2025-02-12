@@ -1,0 +1,138 @@
+ {
+        "projects" : {
+            "project_title_one" : "RECENT",
+            "project_title_two": "PROJECTS",
+            "project_data" : [
+            
+                {   
+                    "id" : 2,
+                    "project_name" : "Whatsapp Clone",
+                    "short_description" : "Whatsapp Clone",
+                    "project_desciption" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    "project_links" : [
+                        {   
+                            "origin" : "git",
+                            "link" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "live",
+                            "live" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "youtube",
+                            "youtube" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        }
+                    ],
+                    "tech_tools" : {
+                        "dart" : "Dart",
+                        "flutter" : "Flutter",
+                        "firebase" : "Firebase"
+                    },
+                    "banners" : [ 
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    ]
+                },
+
+                  {   
+                    "id" : 2,
+                    "project_name" : "Whatsapp Clone",
+                    "short_description" : "Whatsapp Clone",
+                    "project_desciption" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    "project_links" : [
+                        {   
+                            "origin" : "git",
+                            "link" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "live",
+                            "live" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "youtube",
+                            "youtube" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        }
+                    ],
+                    "tech_tools" : {
+                        "dart" : "Dart",
+                        "flutter" : "Flutter",
+                        "firebase" : "Firebase"
+                    },
+                    "banners" : [ 
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    ]
+                },
+
+                  {   
+                    "id" : 2,
+                    "project_name" : "Whatsapp Clone",
+                    "short_description" : "Whatsapp Clone",
+                    "project_desciption" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    "project_links" : [
+                        {   
+                            "origin" : "git",
+                            "link" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "live",
+                            "live" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "youtube",
+                            "youtube" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        }
+                    ],
+                    "tech_tools" : {
+                        "dart" : "Dart",
+                        "flutter" : "Flutter",
+                        "firebase" : "Firebase"
+                    },
+                    "banners" : [ 
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    ]
+                },
+
+                  {   
+                    "id" : 2,
+                    "project_name" : "Whatsapp Clone",
+                    "short_description" : "Whatsapp Clone",
+                    "project_desciption" : "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                    "project_links" : [
+                        {   
+                            "origin" : "git",
+                            "link" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "live",
+                            "live" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        },
+                        {
+                            "origin" : "youtube",
+                            "youtube" : "https://github.com/billimarie/prosecutor-database/issues/9"
+                        }
+                    ],
+                    "tech_tools" : {
+                        "dart" : "Dart",
+                        "flutter" : "Flutter",
+                        "firebase" : "Firebase"
+                    },
+                    "banners" : [ 
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                         "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                        "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    ]
+                }
+                
+            ] 
+        }
+    
+}

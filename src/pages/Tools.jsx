@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { tools } from '../utils/tools'
 import useScreenWidth from '@/utils/useScreeWidth';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
@@ -7,16 +6,20 @@ import variants from '@/utils/variants';
 import { motion } from "framer-motion";
 import ToolsTwo from '../components/my-components/ToolsTwo';
 import ToolOne from '@/components/my-components/ToolOne';
+import useScrollDirection from '@/utils/useScrollDirect';
+
+import tools from '../data/tools.json'
 
 
 function Tools() {
 
-    const [visibleImages, setVisibleImages] = useState(9);
+    // console.log(tools);
+
+    const { tools_title_one, tools_title_two } = tools.tech_tools
+    const [visibleImages, setVisibleImages] = useState(8);
 
     // calulate this screen pixel screen (like Phone, Pad )
     const isMobile = useScreenWidth();
-
-    console.log(visibleImages > 13);
 
     const handleShowMore = () => {
         setVisibleImages((prevVisibleImages) => prevVisibleImages + 9);
@@ -27,35 +30,45 @@ function Tools() {
     }
 
 
+    const scrollDirection = useScrollDirection();
+    const shouldAnimate = scrollDirection === "down";
+
+
     return (
         <main>
             <div className='heading'>
                 <motion.h1
-                    initial="hidden"
+                    // initial="hidden"
+                    initial={shouldAnimate ? false : 'hidden'}
                     whileInView="visible"
                     viewport={{ amount: 0.1 }}
                     variants={variants("bottom", 0.2)}
-                >TECH</motion.h1>
+                >{tools_title_one}</motion.h1>
                 <motion.h1
-                    initial="hidden"
+                    // initial="hidden"
+                    initial={shouldAnimate ? false : 'hidden'}
                     whileInView="visible"
                     viewport={{ amount: 0.1 }}
-                    variants={variants("bottom", 0.2)}
-                >TOOLS</motion.h1>
+                    variants={variants("bottom", 0.3)}
+                >{tools_title_two}</motion.h1>
             </div>
 
 
             {/* <ToolsTwo visibleImages={visibleImages} /> */}
             <ToolOne visibleImages={visibleImages} />
 
+
+
+            {/* Show More Button hide */}
+
             <div className='show-more'>
 
-                <h1 onClick={handleShowMore}>
+                {/* <h1 onClick={handleShowMore}>
                     <FaChevronDown />
-                </h1>
+                </h1> */}
 
 
-                {visibleImages && visibleImages > 9
+                {/* {visibleImages && visibleImages > 9
                     ? (
                         <>
                             <motion.h1
@@ -68,7 +81,7 @@ function Tools() {
                             </motion.h1>
                         </>
                     ) : ""
-                }
+                } */}
 
             </div>
         </main >

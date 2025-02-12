@@ -10,7 +10,7 @@ export const tools = [
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
   },
   {
-    "name": "Lemon Squeezy",
+    "name": "Andriod Studio",
     "description": "Payments Provider",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Vitejs-logo.svg/1200px-Vitejs-logo.svg.png"
   },

@@ -1,0 +1,30 @@
+{
+        "my_work" : {
+            "work_title_one" : "ABOUT MY",
+            "work_title_two": "WORK",
+           "works" : [
+            {   
+                "id" : 0,
+                "position" : "Software Developer",
+                "company_name" : "Mypcot Inotech",
+                "roles_and_responsibliies" : [ 
+                     "Worked on various projects related to software development.",
+                     "Built robust and efficient applications using Dart and Flutter.",
+                     "Collaborated with developers and designers to create visually appealing and intuitive interfaces."
+                ],
+                "experience" : "2020 - 2022"
+            },
+            {   
+                "id" : 1,
+                "position" : "Software Developer",
+                "company_name" : "Mypcot Inotech",
+                "roles_and_responsibliies" : [ 
+                     "Worked on various projects related to software development.",
+                     "Built robust and efficient applications using Dart and Flutter.",
+                     "Collaborated with developers and designers to create visually appealing and intuitive interfaces."
+                ],
+                "experience" : "2020 - 2022"
+            }
+           ]
+        }
+    }

@@ -14,7 +14,7 @@ function Contact() {
         message: ''
     });
 
-    console.log("Access Key:", import.meta.env.VITE_EMAIL_ACCESS_KEY);
+
 
 
 
@@ -29,7 +29,7 @@ function Contact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log(formValue);
+
         console.log("Access Key:", import.meta.env.VITE_EMAIL_ACCESS_KEY);
 
         const payload = {

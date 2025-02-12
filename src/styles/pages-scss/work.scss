@@ -1,6 +1,7 @@
 .ul {
     margin-top: 10px;
 
+
     >li {
         // margin: 10px;
         margin-bottom: 10px;
@@ -13,7 +14,7 @@
 }
 
 .work-timeline {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .hero {
@@ -35,4 +36,23 @@
 
 .radius {
     border-radius: 50%;
+}
+
+
+.custom-date {
+    color: #988E8E;
+    /* Default color */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+.custom-date.hovered {
+    color: orange;
+    /* Change to orange on hover */
+}
+
+.custom-dates:hover {
+    color: orange;
 }

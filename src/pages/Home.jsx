@@ -1,20 +1,27 @@
 import React from 'react'
-import profile from "../../public/profile-pic.jpg"
+import { Link } from "react-router-dom";
 
+import profile from "../../public/profile-pic.jpg"
+import img1 from '../../src/assets/img-3.svg'
+import img2 from '../../src/assets/img-2.svg'
 
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaFileAlt } from "react-icons/fa";
-
 import { Button } from '@/components/ui/button';
-import { Link } from "react-router-dom";
 
 import Social from '@/components/my-components/Social';
 
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
 
+import homeData from "../../src/data/home.json"
+
 
 function Home() {
+
+    const { img, name, description } = homeData.home.card_details
+    const { pagetitleone, pagetitletwo, about, years_of_expirence, completed_project, Worldwide_client } = homeData.home
+
     return (
 
         <>
@@ -24,30 +31,33 @@ function Home() {
 
                     {/* Main Banner */}
                     <div className='banner'>
-
                         <div className='left'>
                             <div className='card'>
 
+                                <img className='style-icon-2' src={img2} />
                                 <div className='profile'>
-                                    <img src={profile} alt='profle pic' />
+                                    <img src={img ? img : profile} alt='profle pic' />
                                 </div>
 
                                 <div className='profile-name'>
-                                    <h1>Vaibhav Waghre</h1>
+                                    <h1>{name ? name : "Vaibhav Waghre"}</h1>
                                 </div>
+
+                                <img className='style-icon-1' src={img1} />
 
                                 <Button className='resume'>
                                     Resume <FaFileAlt />
                                 </Button>
 
                                 <p>
-                                    A Software Engineer who has developed countless innovative solutions.
+                                    {description ? description : "Resume A Software Engineer who has developed countless innovative solutions."}
                                 </p>
 
                                 {/* Social Links */}
                                 <Social />
 
                             </div>
+
                         </div>
 
                         {/* Right Card */}
@@ -60,7 +70,7 @@ function Home() {
                                     viewport={{ amount: 0.1 }}
                                     variants={variants("bottom", 0.1)}
                                 >
-                                    SOFTWARE
+                                    {pagetitleone ? pagetitleone : "SOFTWARE"}
                                 </motion.h1>
 
                                 <motion.h1
@@ -69,7 +79,7 @@ function Home() {
                                     viewport={{ amount: 0.1 }}
                                     variants={variants("bottom", 0.1)}
                                 >
-                                    ENGINEER
+                                    {pagetitletwo ? pagetitletwo : "DEVELOPER"}
                                 </motion.h1>
 
                                 <motion.p
@@ -77,7 +87,7 @@ function Home() {
                                     whileInView="visible"
                                     viewport={{ amount: 0.1 }}
                                     variants={variants("bottom", 0.1)}
-                                >Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products.</motion.p>
+                                >{about ? about : "Passionate about creating intuitive and engaging user experiences. Specialize in transforming ideas into beautifully crafted products."}</motion.p>
 
 
                                 {/* Achiement Info */}
@@ -89,7 +99,7 @@ function Home() {
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}
                                     >
-                                        <h1>{'\u002B'} 12</h1>
+                                        <h1>{'\u002B'} {years_of_expirence}</h1>
                                         <p>YEARS OF EXPERIENCE</p>
                                     </motion.div>
 
@@ -100,7 +110,7 @@ function Home() {
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}
                                     >
-                                        <h1>{'\u002B'}12</h1>
+                                        <h1>{'\u002B'} {completed_project}</h1>
                                         <p>PROJECTS COMPLETED</p>
                                     </motion.div>
 
@@ -111,7 +121,7 @@ function Home() {
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.1)}
                                     >
-                                        <h1>{'\u002B'} 12</h1>
+                                        <h1>{'\u002B'} {Worldwide_client}</h1>
                                         <p>WORLDWIDE CLIENTS</p>
                                     </motion.div>
                                 </div>
@@ -126,9 +136,6 @@ function Home() {
                                     >
                                         <p> lets Talk</p>
                                     </motion.button>
-                                    {/* <Button>
-                                        <p>Resume</p>
-                                    </Button> */}
 
                                     <motion.div
                                         className='work-info'
@@ -143,8 +150,6 @@ function Home() {
                                         <h1><FaArrowRightLong /></h1>
                                     </motion.div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>

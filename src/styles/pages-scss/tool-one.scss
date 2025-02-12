@@ -2,10 +2,13 @@
     // background-color: rgba(171, 0, 0, 0.241);
     display: flex;
     justify-content: center;
+    // margin-top: 10px;
+    margin-bottom: 120px;
 }
 
 
 .tool {
+    width: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,8 +16,8 @@
     gap: 30px;
     // background-color: rgba(127, 255, 212, 0.182);
     padding-inline: 100px;
-    margin-inline: 60px;
-    margin-bottom: 20px;
+    // margin-inline: 60px;
+    margin-block: 40px;
 }
 
 .tool-box {

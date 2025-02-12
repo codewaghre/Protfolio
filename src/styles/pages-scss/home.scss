@@ -68,10 +68,14 @@
             width: 30%;
             background-color: white;
             padding-block: 30px;
-            padding-inline: 52px;
+            // padding-inline: 52px;
             border-radius: 24px;
+            // background-color: #988E8E;
+            position: relative;
+            overflow: hidden;
 
             .card {
+                // background-color: antiquewhite;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -505,5 +509,26 @@
         font-size: 16px;
     }
 
+
+}
+
+
+.style-icon-1 {
+    position: absolute;
+    width: 250px;
+    top: 360px;
+    left: -140px;
+    transform: rotate(-10deg);
+    overflow-y: hidden;
+
+}
+
+.style-icon-2 {
+    position: absolute;
+    width: 200px;
+    top: -20px;
+    left: 0px;
+    transform: rotate(-10deg);
+    overflow-y: hidden;
 
 }

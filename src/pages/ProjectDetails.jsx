@@ -4,34 +4,36 @@ import {
     FaArrowLeftLong,
     FaArrowRightLong
 } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { IoMdArrowDropright } from "react-icons/io";
 import variants from '@/utils/variants';
 import { motion } from "framer-motion";
 
+import projectData from '../data/project.json'
+
+import coverImg from '../assets/img-5.svg'
 
 
-
-const images = [
-    {
-        "id": 1,
-        "url": "https://images.unsplash.com/photo-1738969773091-abcf274f7e0a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "id": 2,
-        "url": "https://images.unsplash.com/photo-1738831920700-ab556b543b46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "id": 3,
-        "url": "https://images.unsplash.com/photo-1738395548716-522475b89043?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "id": 4,
-        "url": "https://images.unsplash.com/photo-1738748444696-2d847bc253ce?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
-]
 
 function ProjectDetails() {
+
+    const { project_data } = projectData.projects
+    const { id } = useParams()
+
+    // Find the project data based on the `id`
+    const project = project_data.find((data) => data.id === parseInt(id));
+
+    // If no project is found, display a message
+    if (!project) {
+        return <div>Project not found</div>;
+    }
+
+    const { project_name, short_description, project_desciption, project_links, tech_tools, banners } = project;
+
+
+
+    console.log(banners);
+
 
 
     const [projectInfo, setProjectInfo] = useState(true)
@@ -56,12 +58,7 @@ function ProjectDetails() {
                 <div className='details-contaier'>
 
                     <div className='left-info'>
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ amount: 0.1 }}
-                            variants={variants("bottom", 0.2)}
-                            className='img'>
+                        <div className='img'>
                             <Slider
                                 showThumbnails
                                 objectFit="cover"
@@ -70,16 +67,13 @@ function ProjectDetails() {
                                 autoplay={true}
                                 autoplayInterval={500}
                                 onClick={() => setCarouselOpen(true)}
-                                images={images.map(i => i.url) || []}
+                                images={banners || [coverImg, coverImg, coverImg, coverImg]}
                             />
-
-                        </motion.div>
+                        </div>
                     </div>
 
                     <div className='right-info'>
                         <div className='project-info'>
-
-
 
                             <motion.div
                                 initial="hidden"
@@ -88,7 +82,7 @@ function ProjectDetails() {
                                 variants={variants("bottom", 0.2)}
                                 className='setArrow'>
                                 <span onClick={handleClickOne}> <IoMdArrowDropright /></span>
-                                <h1 >  Abhishek Waghre   </h1>
+                                <h1 >  {project_name}   </h1>
                             </motion.div>
 
 
@@ -100,49 +94,29 @@ function ProjectDetails() {
                                         whileInView="visible"
                                         viewport={{ amount: 0.1 }}
                                         variants={variants("bottom", 0.2)}
-                                        className='info'>
-
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                        className='info'
+                                    >
+                                        <p>{project_desciption}</p>
 
                                         <motion.div
                                             initial="hidden"
                                             whileInView="visible"
                                             viewport={{ amount: 0.1 }}
                                             variants={variants("bottom", 0.2)}
-                                            className='links'>
-                                            <motion.div
-                                                initial="hidden"
-                                                whileInView="visible"
-                                                viewport={{ amount: 0.1 }}
-                                                variants={variants("bottom", 0.2)}
-                                            >
-                                                Git  :-
-                                                <Link className='link' to="https://github.com/billimarie/prosecutor-database/issues/9">
-                                                    https://github.com/billimarie/prosecutor-database/issues/9
-                                                </Link>
-                                            </motion.div>
-
-
-                                            <div>
-                                                Live  :-
-                                                <Link className='link' to="https://github.com/billimarie/prosecutor-database/issues/9">
-                                                    https://github.com/billimarie/prosecutor-database/issues/9
-                                                </Link>
-                                            </div>
-
-                                            <div>
-                                                Youtube  :-
-                                                <Link className='link' to="https://github.com/billimarie/prosecutor-database/issues/9">
-                                                    https://github.com/billimarie/prosecutor-database/issues/9
-                                                </Link>
-                                            </div>
-
-
-
+                                            className='links'
+                                        >
+                                            {project_links.map((link, index) => (
+                                                <div key={index}>
+                                                    {link.origin} :-
+                                                    <Link className='link' to={link.link || link.live || link.youtube}>
+                                                        {link.link || link.live || link.youtube}
+                                                    </Link>
+                                                </div>
+                                            ))}
                                         </motion.div>
                                     </motion.div>
                                 </>
-                            ) : ""}
+                            ) : "No Data Found !"}
 
 
                             {/* <div className='setArrow'>
@@ -184,36 +158,27 @@ function ProjectDetails() {
 
                             {
 
-                                tool ? (<> <div className='tech'>
+                                tool ? (
+                                    <>
 
+                                        <div className='tech'>
+                                            <div className='tech-box'>
+                                                {Object.values(tech_tools).map((tool, index) => (
+                                                    <motion.div
+                                                        key={index}
+                                                        initial="hidden"
+                                                        whileInView="visible"
+                                                        viewport={{ amount: 0.1 }}
+                                                        variants={variants("bottom", 0.2)}
+                                                    >
+                                                        {tool}
+                                                    </motion.div>
+                                                ))}
+                                            </div>
+                                        </div>
 
-                                    <div className='tech-box'>
-                                        <motion.div
-                                            initial="hidden"
-                                            whileInView="visible"
-                                            viewport={{ amount: 0.1 }}
-                                            variants={variants("bottom", 0.2)}
-                                        >
-                                            JavaScript
-                                        </motion.div>
-                                        <motion.div
-                                            initial="hidden"
-                                            whileInView="visible"
-                                            viewport={{ amount: 0.1 }}
-                                            variants={variants("bottom", 0.2)}
-                                        >
-                                            JavaScript
-                                        </motion.div>
-                                        <motion.div
-                                            initial="hidden"
-                                            whileInView="visible"
-                                            viewport={{ amount: 0.1 }}
-                                            variants={variants("bottom", 0.2)}
-                                        >
-                                            JavaScript
-                                        </motion.div>
-                                    </div>
-                                </div></>) : ""
+                                    </>
+                                ) : " No Data Found !"
                             }
 
 

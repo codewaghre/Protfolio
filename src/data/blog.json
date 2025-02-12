@@ -1,0 +1,36 @@
+ {
+        "blogs" : {
+            "blog_title_one" : "CREATIVE",
+            "blog_title_two" : "BLOGS",
+            "blogs_contents" : [
+                {
+                    "id" : 0,
+                    "title" : "Top 10 Best Whatsapp Clone Apps",
+                    "date" : "Mar 15, 2024",
+                    "banner" : "https://framerusercontent.com/images/ljDxCenLUqxiPjBcxCsK7cBEmU.png",
+                    "link" : "https://medium.com/@vaibha30/jenkins-with-flutter-building-continuous-integration-pipelines-part-1-4d278a537fa0"
+                },
+                {
+                    "id" : 1,
+                    "title" : "Top 10 Best Whatsapp Clone Apps",
+                    "date" : "Mar 15, 2024",
+                    "banner" : "https://framerusercontent.com/images/ljDxCenLUqxiPjBcxCsK7cBEmU.png",
+                    "link" : "https://medium.com/@vaibha30/jenkins-with-flutter-building-continuous-integration-pipelines-part-1-4d278a537fa0"
+                },
+                {
+                    "id" : 2,
+                    "title" : "Top 10 Best Whatsapp Clone Apps",
+                    "date" : "Mar 15, 2024",
+                    "banner" : "https://framerusercontent.com/images/ljDxCenLUqxiPjBcxCsK7cBEmU.png",
+                    "link" : "https://medium.com/@vaibha30/jenkins-with-flutter-building-continuous-integration-pipelines-part-1-4d278a537fa0"
+                },
+                {
+                    "id" : 0,
+                    "title" : "Top 10 Best Whatsapp Clone Apps",
+                    "date" : "Mar 15, 2024",
+                    "banner" : "https://framerusercontent.com/images/ljDxCenLUqxiPjBcxCsK7cBEmU.png",
+                    "link" : "https://medium.com/@vaibha30/jenkins-with-flutter-building-continuous-integration-pipelines-part-1-4d278a537fa0"
+                }
+            ]
+        }
+    }

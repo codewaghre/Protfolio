@@ -97,7 +97,7 @@ function TooltipHeader() {
                     <TooltipProvider>
                         <Tooltip>
                             <TooltipTrigger>
-                                <Link to="/blog" style={{ color: "white" }}>
+                                <Link to="/blog" style={{ color: "white" }} key="blog-link">
                                     <div className='icon'>
                                         <TfiWrite />
                                     </div>
