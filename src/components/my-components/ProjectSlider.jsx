@@ -71,7 +71,7 @@ const BlogCarousel = ({ data }) => {
             >
                 <Slider {...settings}>
                     {data.map((project, i) => (
-                        <Link to={`/project-details/  ${project.id}`} key={project.id}>
+                        <Link to={`/project-details/${project.id}`} key={project.id}>
                             <div className="card-box">
                                 <div className="img-box">
                                     <img src={project.banner ? project.banner : coverImg} alt="card-img" />
