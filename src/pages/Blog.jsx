@@ -43,29 +43,29 @@ function Blog() {
 
                     <div className='cards' >
                         {blog && blogs_contents.map((data, i) => (
-                            <>
 
-                                <Link to={data.link} key={data.id} target='blank'>
-                                    <motion.div
-                                        key={i}
-                                        initial="hidden"
-                                        animate={shouldAnimate ? 'visible' : false}
-                                        whileInView="visible"
-                                        viewport={{ amount: 0.1 }}
-                                        variants={variants("bottom", 0.1)}
-                                        className='project-card' >
-                                        <div className='img-container'>
-                                            <img src={data.banner} alt='card-img' />
-                                        </div>
 
-                                        <div className='blog-des'>
-                                            <p>{data.date}</p>
-                                            <h1>{data.title}</h1>
-                                        </div>
-                                    </motion.div>
-                                </Link>
+                            <Link to={data.link} key={data.id} target='blank'>
+                                <motion.div
+                                    key={data.id}
+                                    initial="hidden"
+                                    animate={shouldAnimate ? 'visible' : false}
+                                    whileInView="visible"
+                                    viewport={{ amount: 0.1 }}
+                                    variants={variants("bottom", 0.1)}
+                                    className='project-card' >
+                                    <div className='img-container'>
+                                        <img src={data.banner} alt='card-img' />
+                                    </div>
 
-                            </>
+                                    <div className='blog-des'>
+                                        <p>{data.date}</p>
+                                        <h1>{data.title}</h1>
+                                    </div>
+                                </motion.div>
+                            </Link>
+
+
                         ))}
                     </div>
                 </div>
