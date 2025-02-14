@@ -16,6 +16,7 @@ import ProjectDetails from "./pages/ProjectDetails"
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import NotFound from "./pages/NotFound"
 
 
 function App() {
@@ -33,9 +34,12 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/project-details/:id" element={<ProjectDetails />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {/* <Footer /> */}
         <Toaster position="bottom-center" reverseOrder={true} />
+
       </Router>
     </>
   )

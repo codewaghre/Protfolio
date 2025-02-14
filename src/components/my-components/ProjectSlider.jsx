@@ -65,7 +65,7 @@ const BlogCarousel = ({ data }) => {
                 className="project-cards"
                 whileInView="visible"
                 viewport={{ amount: 0.1 }}
-                variants={variants("bottom", -0.2)}
+                variants={variants("bottom", 0.1)}
                 initial="hidden"
                 animate={shouldAnimate ? 'visible' : false}
             >

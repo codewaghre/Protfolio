@@ -99,15 +99,9 @@ function Projects() {
 
 
 
-            <motion.div
-                initial="hidden"
-                animate={shouldAnimate ? 'visible' : false}
-                whileInView="visible"
-                viewport={{ amount: 0.5 }}
-                variants={variants("bottom", -0.3)}
-            >
+            <div>
                 <ProjectSlider data={project_data} />
-            </motion.div>
+            </div>
 
 
             {/* Tesitng / future need */}
