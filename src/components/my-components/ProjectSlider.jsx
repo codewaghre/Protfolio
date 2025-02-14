@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import blog from '../../data/blog.json'
 
 
 import { motion } from "framer-motion";
@@ -74,11 +73,10 @@ const BlogCarousel = ({ data }) => {
                         <Link to={`/project-details/${project.id}`} key={project.id}>
                             <div className="card-box">
                                 <div className="img-box">
-                                    <img src={project.banner ? project.banner : coverImg} alt="card-img" />
+                                    <img src={project.banners ? project.banners : coverImg} alt="card-img" />
                                 </div>
                                 <div className="blog-des">
                                     <h1>{project.project_name}</h1>
-
                                 </div>
                             </div>
                         </Link>
